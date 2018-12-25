@@ -20,7 +20,6 @@ from django.contrib.auth.views import login, logout_then_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(('blog.urls','blog'),namespace='blog')),
+    path('', include('blog.urls')),
     path('accounts/login/',login, {'template_name':'index.html'},name='login'),
-    path('logout/',logout_then_login, name='logout')
 ]

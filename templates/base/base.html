@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<meta charset="UTF-8">
+<head>
+        <title>To my Baby</title>
+        {% block staticfiles %}
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+            <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="page-header">
+            <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-off"></span></a>
+            <a href="{% url 'blog:post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="{% url 'blog:post_detail' pk=8 %}" class="top-menu"><span class="glyphicon glyphicon-heart"></span></a>
+            <h1><a href="/">My Blog To Love</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+             <div class="col-md-8">
+                 {% block content %}
+
+                 {% endblock %}
+             </div>
+            </div>
+        </div>
+    </body>
+</html>
