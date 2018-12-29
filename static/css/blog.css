@@ -3,11 +3,13 @@ h1 a {
     color: #FCA205;
     font-family: 'Lobster';
 }
-
+.navbar navbar-expand-lg navbar-dark bg-primary{
+    background-color: #ff9400;
+}
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 10px 10px 10px 30px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -52,16 +54,4 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
-.login-box {
-    width: 320px;
-    height: 420px;
-    background-color: #0000;
-    color: #ffffff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 70px 30px;
-}
 
