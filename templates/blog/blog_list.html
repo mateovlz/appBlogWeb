@@ -1,0 +1,20 @@
+
+{% extends 'base/base.html' %}
+
+     {% block title %}
+        <title>Blogs</title>
+     {% endblock %}
+     {% block content %}
+         {% if object_list %}
+         {% for blog in object_list %}
+             <div class="post">
+                 <div class="date">
+                     <p>Author: {{ blog.author }}</p>
+                 </div>
+                 <h1><a style="font-family: Lobster" href="{% url 'blog:post_detail' pk=blog.pk %}">{{ blog.name }}</a></h1>
+                 <p>{{ blog.description|linebreaksbr }}</p>
+                 <p style="font-family: Lobster">Posts: {{ blog.posts|linebreaksbr }}</p>
+             </div>
+         {% endfor %}
+         {% endif %}
+     {% endblock %}

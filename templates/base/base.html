@@ -8,10 +8,10 @@
         {% endblock %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% block staticfiles %}
-            <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-            <link rel="stylesheet" href="{% static 'css/Boostrap.css' %}">
             <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+            <link rel="stylesheet" href="{% static 'css/Boostrap.css' %}">
         {% endblock %}
     </head>
     <body>
@@ -25,13 +25,13 @@
              <div class="collapse navbar-collapse" id="navbarColor02">
                 <ul class="navbar-nav mr-auto">
                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                    </li>
                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'blog:post_new'  %}">Add Post<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="{% url 'blog:blog_list'  %}">Blogs<span class="sr-only">(current)</span></a>
                    </li>
                    <li class="nav-item">
-                      <a class="nav-link" href="#">Functions</a>
+                      <a class="nav-link" href="{% url 'blog:post_new'  %}">Add Post</a>
                    </li>
                 </ul>
                    <ul class="nav navbar-nav navbar-right">
@@ -64,6 +64,7 @@
             </div>
         </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'js/bootstrap.js' %}"></script>
     </body>
 </html>

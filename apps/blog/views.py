@@ -1,8 +1,15 @@
 from django.shortcuts import render , get_object_or_404
-from .models import Post
+from apps.blog.models import Post, Blog
 from django.utils import timezone
 from .forms import PostForm
 from django.shortcuts import redirect
+from django.views.generic import CreateView, ListView
+from django.urls import reverse_lazy
+
+class BlogList(ListView):
+    model = Blog
+    template_name = 'blog/blog_list.html'
+    success_url = reverse_lazy('blog:post_list')
 
 
 def post_list(request):
