@@ -24,7 +24,7 @@ class Blog(models.Model):
     description = models.TextField(default="Info about this blog")
     published_date = models.DateField(default=timezone.now,blank=True, null=True)
     author = models.ForeignKey(User,default='User', on_delete=models.CASCADE)
-    posts = models.ForeignKey(Post,null=True,blank= True,on_delete=models.CASCADE)
+    posts = models.ManyToManyField(Post)
 
     def __str__(self):
-        return self.name
+        return "{} {} {}".format(self.name,self.author,self.posts)

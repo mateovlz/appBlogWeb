@@ -10,7 +10,7 @@
                     {{ post.published_date }}
                 </div>
             {% endif %}
-            <a class="btn btn-default" href="{% url 'blog:post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'blog:post_edit' pk=post.pk %}">Editar</a>
             <h1 style="font-family: Lobster">{{ post.title }}</h1>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>

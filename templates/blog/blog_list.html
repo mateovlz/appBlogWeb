@@ -11,7 +11,7 @@
                  <div class="date">
                      <p>Author: {{ blog.author }}</p>
                  </div>
-                 <h1><a style="font-family: Lobster" href="{% url 'blog:post_detail' pk=blog.pk %}">{{ blog.name }}</a></h1>
+                 <h1><a style="font-family: Lobster" href="{% url 'blog:blog_detail' slug=blog.pk %}">{{ blog.name }}</a></h1>
                  <p>{{ blog.description|linebreaksbr }}</p>
                  <p style="font-family: Lobster">Posts: {{ blog.posts|linebreaksbr }}</p>
              </div>

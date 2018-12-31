@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+    {% block title %}
+        <title>Blog Details</title>
+    {% endblock %}
+    {% block content %}
+        <div class="post">
+            {% if object.published_date %}
+                <div class="date">
+                    {{ object.published_date }}
+                </div>
+            {% endif %}
+            <a class="btn btn-default" href="{% url 'blog:post_edit' pk=object.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <h1 style="font-family: Lobster">{{ object.name }}</h1>
+            <p>{{ object.description|linebreaksbr }}</p>
+        </div>
+    {% endblock %}
